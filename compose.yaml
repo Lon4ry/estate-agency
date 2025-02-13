@@ -22,9 +22,7 @@ services:
       - "./db/:/var/lib/postgresql/data/pg-data/:rw"
     restart: always
   nginx:
-    image: "nginx:alpine"
-    volumes:
-      - "./nginx/:/etc/nginx/:rw"
+    build: "./nginx"
     ports:
       - "80:80"
     depends_on:
